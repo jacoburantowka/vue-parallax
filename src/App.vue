@@ -1,17 +1,42 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <main id="app">
+    <section class="classes">
+      <ClassPage v-for="item in classes" :key="item.title"/>
+    </section>
+  </main>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import ClassPage from "./components/ClassPage";
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    ClassPage
+  },
+  data () {
+    return {
+      classes: [
+        {
+          title: 'Ranger',
+          color: 'green',
+          bgtext: 'RNGR',
+          src: require('./assets/Class Icon - Ranger.svg')
+        },
+        {
+          title: 'Bard',
+          color: 'pink',
+          bgtext: 'BRD',
+          src: require('./assets/Class Icon - Bard.svg')
+        },
+        {
+          title: 'Wizard',
+          color: 'purple',
+          bgtext: 'WZRD',
+          src: require('./assets/Class Icon - Wizard.svg')
+        }
+      ]
+    }
   }
 }
 </script>
