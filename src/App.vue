@@ -1,7 +1,10 @@
 <template>
   <main id="app">
-    <section class="classes">
-      <ClassPage v-for="item in classes" :key="item.title"/>
+    <section class="roles">
+      <ClassPage
+          v-for="role in roles"
+          :key="role.title"
+          :role="role"/>
     </section>
   </main>
 </template>
@@ -16,7 +19,7 @@ export default {
   },
   data () {
     return {
-      classes: [
+      roles: [
         {
           title: 'Ranger',
           color: 'green',
@@ -42,12 +45,31 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'monsteratt', sans-serif;
+}
+
+main {
+  width: 100vw;
+  min-height: 100vh;
+  overflow: hidden;
+
+  background-color: #EEE;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.roles {
+  display: flex;
+  max-width: 1280px;
+  padding: 25px;
+  margin: 0 auto;
 }
 </style>
