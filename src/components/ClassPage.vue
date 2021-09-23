@@ -2,7 +2,7 @@
   <div class="role">
     <div :class="'role--inner ' + role.color">
       <div class="role--text-wrap">
-        <h2 class="bg--text">{{ role.bgtext }}</h2>
+        <h2 class="bg-text">{{ role.bgtext }}</h2>
       </div>
       <div class="role--image-wrap">
         <img :src="role.src"
@@ -35,46 +35,39 @@ export default {
   width: 100%;
   padding: 25px;
 }
-
 .role--inner {
   position: relative;
   padding: 25px;
   box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.25);
+  perspective: 1000px;
 }
-
 .role--inner.green {
-  background-image: linear-gradient(to top right, rgba(17, 100, 50, 0.47), #24D484);
-
+  background-image: linear-gradient(to bottom right, #24D484, #116432);
 }
-
-.role--inner.pink {
-  background-image: linear-gradient(to bottom left, #F444A4, #24D484 70%);
-
-}
-
 .role--inner.purple {
-  background-image: linear-gradient(to bottom left, #69b1f1, #F444A4 70%);
-
+  background-image: linear-gradient(to bottom left, #24D484, #2474C4 70%);
 }
-
+.role--inner.pink {
+  background-image: linear-gradient(to bottom right, #F444A4, #1168D4);
+}
 .role--text-wrap {
   position: absolute;
   top: 0;
+  left: 0;
   right: 0;
   bottom: 0;
-  left: 0;
   z-index: 0;
   overflow: hidden;
+  perspective: 1000px;
 }
 
 .role--text-wrap h2 {
   color: #313131;
-  font-size: 8em;
+  font-size: 128px;
   font-weight: 900;
   opacity: 0.2;
   transform-origin: center;
 }
-
 .role--image-wrap {
   position: relative;
   z-index: 1;
@@ -83,28 +76,24 @@ export default {
 
 .role--image-wrap .image {
   width: 100%;
-  filter: drop-shadow(0px 0px 12px rgba(0, 0, 0, 0.1));
+  filter: drop-shadow(0px 0px 12px rgba(0, 0, 0, 0.25));
 }
-
-
 .role--detail {
-  background-color: #fff;
+  background-color: #FFF;
   padding: 25px;
-  margin: 0 -25px -25px;
+  margin: 0px -25px -25px;
 }
-
 .role--detail h2 {
   font-size: 24px;
   font-weight: 700;
   color: #676767;
   margin-bottom: 15px;
 }
-
 .role--detail p {
   font-size: 14px;
   line-height: 1.5;
   font-weight: 300;
-  color: #676;
+  color: #676767;
 }
 
 </style>
